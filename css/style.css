@@ -147,7 +147,7 @@ body{
 
 .piece-grid{
     width:100%;
-    max-width:120px;
+    max-width:200px;
     margin:auto;
     aspect-ratio:1;
     display:grid;
@@ -309,36 +309,54 @@ body{
    MOBILE
 ========================= */
 
-@media (max-width:900px){
-
-    .workspace{
-        grid-template-columns:1fr;
-    }
-
-    .board{
-        max-width:440px;
-    }
-
-    .steps-container{
-        grid-template-columns:1fr;
-    }
-
-}
-
 @media (max-width:600px){
 
     .container{
-        padding:20px 0;
+        padding:18px 0;
     }
 
+    .workspace{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    /* Board */
+    .board{
+        max-width:340px;
+        gap:4px;
+    }
+
+    /* 3 piece vẫn nằm ngang */
     .pieces-container{
-        flex-direction:column;
-        align-items:center;
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:10px;
+        align-items:start;
     }
 
+    .piece-wrapper{
+        width:100%;
+    }
+
+    .piece-wrapper h3{
+        font-size:13px;
+        margin-bottom:8px;
+    }
+
+    .piece-grid{
+    width:min(30vw,120px);
+    aspect-ratio:1;
+    gap:3px;
+    }
+
+    /* Button */
     .actions{
         flex-direction:column;
-        align-items:center;
+        gap:12px;
     }
 
     .secondary,
@@ -346,4 +364,23 @@ body{
         width:100%;
     }
 
+    /* Result */
+    .result-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:6px;
+    }
+
+    .steps-container{
+        grid-template-columns:1fr;
+    }
+
+    .solution-board{
+        max-width:260px;
+        margin:auto;
+    }
+
+    #nextBtn{
+        width:100%;
+    }
 }

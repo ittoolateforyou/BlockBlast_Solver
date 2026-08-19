@@ -50,8 +50,8 @@
 .solution-step {
     background: #FFF9F4;
     border: 1px solid #F2E5D8;
-    border-radius: 14px;
-    padding: 14px;
+    border-radius: 30px;
+    padding: 30px;
     transition: .2s;
 }
 
