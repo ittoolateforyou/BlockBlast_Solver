@@ -348,7 +348,7 @@ body{
     }
 
     .piece-grid{
-    width:min(30vw,120px);
+    width:min(30vw,100px);
     aspect-ratio:1;
     gap:3px;
     }
