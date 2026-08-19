@@ -1,0 +1,194 @@
+/* =====================================
+   UI.CSS
+   Placement Steps + Animation
+===================================== */
+
+/* Result animation */
+.result {
+    animation: fadeUp .25s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Header ---------- */
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.result-header h2 {
+    color: var(--orange);
+    font-size: 24px;
+}
+
+#scoreText {
+    color: #666;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* ---------- 3 Steps ---------- */
+
+.steps-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.solution-step {
+    background: #FFF9F4;
+    border: 1px solid #F2E5D8;
+    border-radius: 14px;
+    padding: 14px;
+    transition: .2s;
+}
+
+.solution-step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(0,0,0,.06);
+}
+
+/* ---------- Step Info ---------- */
+
+.step-header {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.step-header h3 {
+    color: var(--orange);
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.step-header span {
+    display: block;
+    color: #444;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.step-header p {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.step-header small {
+    color: var(--green);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+/* ---------- Mini Board ---------- */
+
+.solution-board {
+    width: 100%;
+    aspect-ratio: 1;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 3px;
+}
+
+.solution-cell {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    background: #ECECEC;
+    transition: .15s;
+}
+
+/* Existing block */
+.solution-cell.before {
+    background: var(--blue);
+}
+
+/* Recommended placement */
+.solution-cell.place {
+    background: var(--orange);
+    box-shadow: 0 0 8px rgba(255,122,0,.35);
+}
+
+/* Cleared row / column */
+.solution-cell.clear {
+    background: var(--green);
+}
+
+/* ---------- Legend ---------- */
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #666;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+}
+
+.legend-color.before {
+    background: var(--blue);
+}
+
+.legend-color.place {
+    background: var(--orange);
+}
+
+.legend-color.clear {
+    background: var(--green);
+}
+
+/* ---------- Next Button ---------- */
+
+.next-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+#nextBtn {
+    width: 240px;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 900px) {
+
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+    .solution-step {
+        max-width: 380px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .result-header {
+        flex-direction: column;
+        gap: 6px;
+    }
+}

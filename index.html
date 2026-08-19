@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Block Blast Solver</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/ui.css" />
+</head>
+
+<body>
+
+<main class="container">
+
+    <!-- HEADER -->
+    <header class="header" id="top">
+        <h1>🟧 Block Blast Solver</h1>
+        <p>Fill the board and 3 pieces to calculate the optimal move sequence.</p>
+    </header>
+
+    <!-- INPUT AREA -->
+    <section class="workspace">
+
+        <!-- BOARD -->
+        <div class="card board-card">
+
+            <div class="card-title">
+                <h2>Fill the initial grid</h2>
+                <span id="filledCount">0 / 64</span>
+            </div>
+
+            <div id="board" class="board"></div>
+
+        </div>
+
+        <!-- PIECES -->
+        <div class="card pieces-card">
+
+            <div class="card-title">
+                <h2>Fill the 3 pieces</h2>
+            </div>
+
+            <div class="pieces-container">
+
+                <div class="piece-wrapper">
+                    <h3>Piece 1</h3>
+                    <div id="piece-0" class="piece-grid"></div>
+                </div>
+
+                <div class="piece-wrapper">
+                    <h3>Piece 2</h3>
+                    <div id="piece-1" class="piece-grid"></div>
+                </div>
+
+                <div class="piece-wrapper">
+                    <h3>Piece 3</h3>
+                    <div id="piece-2" class="piece-grid"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BUTTONS -->
+    <section class="actions">
+
+        <button id="clearBtn" class="btn secondary">
+            Clear
+        </button>
+
+        <button id="solveBtn" class="btn primary">
+            Solve
+        </button>
+
+    </section>
+
+    <!-- SOLUTION -->
+    <section id="result" class="result hidden">
+
+        <div class="result-header">
+            <h2>Placement Steps</h2>
+            <p id="scoreText">Best Score : 0</p>
+        </div>
+
+        <div id="solutionContent"></div>
+
+        <div class="next-container">
+            <button id="nextBtn" class="btn primary">
+                Next
+            </button>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- Load order -->
+<script src="js/solver.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
